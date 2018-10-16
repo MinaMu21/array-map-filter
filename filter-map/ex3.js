@@ -51,7 +51,8 @@ Sortie attendue:
 */
 
 function getStudentsPerCurriculum(campuses, curriculumName) {
-
+ return campuses.filter(campus => campus.curriculums[0].name.includes(curriculumName))
+ .map(campus => ({[campus.city]: campus.curriculums[0].numStudents}))
 }
 
 module.exports = getStudentsPerCurriculum;
